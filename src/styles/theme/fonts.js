@@ -1,5 +1,6 @@
 export const fontSizes = {
   normal: '1em',
+  xxlarge: '3em',
 };
 
 export const fontWeights = {
