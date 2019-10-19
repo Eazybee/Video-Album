@@ -11,7 +11,7 @@ body {
   background-color: #fafafa;
   color: #3c414d;
   font-family: Francois One, Helvetica, Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 `;
 

@@ -38,7 +38,7 @@ ${({
     text-align: ${textAlign};
     color: ${textColors[color]};
     display: ${display};
-    padding: ${spacings[padding] || '0'};
+    padding: ${spacings[padding]};
     font-size: ${fontSizes[userFontSize]};
     font-weight: ${fontWeights[userFontWeight]};
 `}`;
@@ -50,6 +50,7 @@ Text.defaultProps = {
   textAlign: 'left',
   fontSize: 'normal',
   color: 'black',
+  padding: 'zero',
 };
 
 const {
