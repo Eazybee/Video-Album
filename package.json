@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint '**/*js'",
     "lint:fix": "prettier-eslint '**/*js' --write",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "clean": "rm -rf build",
     "styleguide": "styleguidist server",
     "styleguide-build": "styleguidist build",
@@ -20,6 +20,9 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/jest-dom": "^4.1.2",
+    "@testing-library/react": "^9.3.0",
+    "@testing-library/react-hooks": "^3.1.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "eslint": "^6.0.1",
@@ -29,11 +32,13 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "husky": "^3.0.0",
+    "jest": "^24.9.0",
     "lint-staged": "^9.1.0",
     "path": "^0.12.7",
     "prettier-eslint": "^9.0.0",
     "prettier-eslint-cli": "^5.0.0",
     "react-styleguidist": "^9.1.11",
+    "react-test-renderer": "^16.10.2",
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {

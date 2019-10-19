@@ -10,6 +10,9 @@
   "env": {
   },
   "formation": {
+    "web": {
+      "quantity": 1
+    }
   },
   "name": "Video-Album",
   "scripts": {
