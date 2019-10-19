@@ -4,18 +4,22 @@ const color = {
   primary: '#494ca2',
   danger: '#FF0000',
   transparent: 'transparent',
+  grey: '#719192',
 };
 
 const {
   primary, white, transparent,
-  danger, black,
+  danger, black, grey,
 } = color;
 
 export const textColors = {
-  white, primary, danger, black,
+  white,
+  primary,
+  danger,
+  black,
+  grey,
 };
 
 export const backgroundColors = {
-  transparent,
-  white,
+  transparent, white, primary, danger,
 };
