@@ -59,6 +59,7 @@ Text.defaultProps = {
 const {
   textColors, fontSizes, fontWeights, spacings,
 } = theme;
+
 Text.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   display: PropTypes.oneOf(['block', 'inline', 'flex', 'inline-block', 'none']),

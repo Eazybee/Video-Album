@@ -22,7 +22,7 @@ const Flexbox = ({
       flexWrap,
       justifyContent,
       hasBottomBorder,
-      theme: { spacings }
+      theme: { spacings, textColors }
     }) => `
       display: flex;
       padding: ${spacings[padding]};
@@ -30,7 +30,7 @@ const Flexbox = ({
       flex-direction: ${flexDirection};
       flex-wrap: ${flexWrap};
       justify-content: ${justifyContent};
-      border-bottom: ${hasBottomBorder ? 'solid .2em #719192' : '' };
+      border-bottom: ${hasBottomBorder ? `solid .2em ${textColors.grey}` : '' };
     `}`;
 
     return (
