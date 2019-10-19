@@ -1,65 +1,65 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<styles>/theme';
 
-const Text = ({
+
+const Title = ({
   fontSize,
   textAlign,
   color,
   display,
-  fontWeight,
   children,
   padding,
-  ...props
-}) => (
-  <Text.Container
-    fontSize={fontSize}
-    textAlign={textAlign}
-    color={color}
-    display={display}
-    fontWeight={fontWeight}
-    padding={padding}
-    {...props}
-  >
-    {children}
-  </Text.Container>
-);
-
-Text.Container = styled.span`
-${({
-    padding,
-    fontSize: userFontSize,
-    fontWeight: userFontWeight,
-    display,
+  type,
+}) => {
+  const Header = styled(type)`
+  ${({
+    fontSize,
     textAlign,
     color,
+    display,
+    padding,
     theme: {
-      fontSizes, fontWeights, textColors, spacings,
+      fontSizes, textColors, spacings,
     },
   }) => `
-    text-align: ${textAlign};
-    color: ${textColors[color]};
+    font-size: ${fontSizes[fontSize]};
+    font-weight: bold;
     display: ${display};
     padding: ${spacings[padding]};
-    font-size: ${fontSizes[userFontSize]};
-    font-weight: ${fontWeights[userFontWeight]};
-`}`;
+    color: ${textColors[color]};
+    text-align: ${textAlign};
+  `}`;
+
+  return (
+    <Header
+      fontSize={fontSize}
+      textAlign={textAlign}
+      color={color}
+      display={display}
+      padding={padding}
+    >
+      {children}
+    </Header>);
+};
 
 
-Text.defaultProps = {
-  display: 'inline',
-  fontWeight: 'normal',
+Title.defaultProps = {
+  type: 'h1',
+  display: 'block',
   textAlign: 'left',
   fontSize: 'normal',
-  color: 'black',
+  color: 'danger',
   padding: 'zero',
 };
 
 const {
   textColors, fontSizes, fontWeights, spacings,
 } = theme;
-Text.propTypes = {
+Title.propTypes = {
+  type: PropTypes.oneOf(['h1', 'h6']).isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   display: PropTypes.oneOf(['block', 'inline', 'flex', 'inline-block', 'none']),
   color: PropTypes.oneOf(Object.keys(textColors)),
@@ -69,4 +69,4 @@ Text.propTypes = {
   padding: PropTypes.oneOf(Object.keys(spacings)),
 };
 
-export default Text;
+export default Title;
