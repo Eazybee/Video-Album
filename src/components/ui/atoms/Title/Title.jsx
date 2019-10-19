@@ -13,6 +13,7 @@ const Title = ({
   children,
   padding,
   type,
+  ...props
 }) => {
   const Header = styled(type)`
   ${({
@@ -40,6 +41,7 @@ const Title = ({
       color={color}
       display={display}
       padding={padding}
+      {...props}
     >
       {children}
     </Header>);
