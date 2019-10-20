@@ -9,6 +9,7 @@ describe('Title Component', () => {
     const { getByText } = render(<Title>Hello</Title>);
 
     expect(getByText('Hello')).toBeTruthy();
+    expect(getByText('Hello').tagName).toBe('H1');
     expect(getByText('Hello')).toHaveStyle(`
       text-align: left;
       font-size: 1em;
@@ -16,6 +17,14 @@ describe('Title Component', () => {
       color: #FF0000;
       padding: 0;
     `);
+  });
+
+  it('should render h6 element', () => {
+    const { getByText } = render(
+      <Title type='h6'>Hello</Title>,
+    );
+
+    expect(getByText('Hello').tagName).toBe('H6');
   });
 
   it('should have black color', () => {

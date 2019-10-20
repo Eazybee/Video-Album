@@ -29,9 +29,10 @@ Button.Container = styled.button`
     color: ${type === 'primary' ? textColors.primary : textColors.danger};
     border: solid .1em ${type === 'primary' ? textColors.primary : textColors.danger};
     display: ${display};
-    padding: .3em 1em;
+    padding: .5em 1em;
     border-radius: .4rem;
     outline: 0;
+    cursor: pointer;
     transition: .3s linear;
 
     &:hover, &:active  {

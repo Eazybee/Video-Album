@@ -9,6 +9,7 @@ describe('Flexbox Component', () => {
     const { getByText } = render(<Flexbox>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toBeTruthy();
+    expect(getByText('This is a flebox').tagName).toBe('DIV');
     expect(getByText('This is a flebox')).toHaveStyle(`
       display: flex;
       padding: 0;
@@ -16,6 +17,12 @@ describe('Flexbox Component', () => {
       flex-direction: row;
       flex-wrap: wrap;
     `);
+  });
+
+  it('should render header tag element', () => {
+    const { getByText } = render(<Flexbox type='header'>This is a flebox</Flexbox>);
+
+    expect(getByText('This is a flebox').tagName).toBe('HEADER');
   });
 
   it('should have border bottom', () => {
