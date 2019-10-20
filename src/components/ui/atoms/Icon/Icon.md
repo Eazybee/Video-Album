@@ -1,8 +1,8 @@
 Icon example:
 ```jsx
-  <Icon type='Home' big />
+  <Icon icon='faSolid/Home' big />
 ```
 
 ```jsx
-  <Icon type='ThumbsDown' />
+  <Icon icon='faRegular/ThumbsDown' />
 ```
