@@ -11,6 +11,7 @@ const Text = ({
   fontWeight,
   children,
   padding,
+  hasRightMargin,
   ...props
 }) => (
   <Text.Container
@@ -20,6 +21,7 @@ const Text = ({
     display={display}
     fontWeight={fontWeight}
     padding={padding}
+    hasRightMargin={hasRightMargin}
     {...props}
   >
     {children}
@@ -34,6 +36,7 @@ ${({
     display,
     textAlign,
     color,
+    hasRightMargin,
     theme: {
       fontSizes, fontWeights, textColors, spacings,
     },
@@ -44,6 +47,7 @@ ${({
     padding: ${spacings[padding]};
     font-size: ${fontSizes[userFontSize]};
     font-weight: ${fontWeights[userFontWeight]};
+    ${hasRightMargin ? 'margin-right: 1em;' : ''}
 `}`;
 
 
@@ -54,6 +58,7 @@ Text.defaultProps = {
   fontSize: 'normal',
   color: 'black',
   padding: 'zero',
+  hasRightMargin: false,
 };
 
 const {
@@ -68,6 +73,7 @@ Text.propTypes = {
   textAlign: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
   fontWeight: PropTypes.oneOf(Object.keys(fontWeights)),
   padding: PropTypes.oneOf(Object.keys(spacings)),
+  hasRightMargin: PropTypes.bool,
 };
 
 export default Text;

@@ -16,6 +16,7 @@ module.exports = {
       '<src>': path.resolve(__dirname, '../src'),
       '<pages>': path.resolve(__dirname, '../src/components/pages'),
       '<components>': path.resolve(__dirname, '../src/components'),
+      '<atoms>': path.resolve(__dirname, '../src/components/ui/atoms'),
       '<routes>': path.resolve(__dirname, '../src/routes'),
       '<styles>': path.resolve(__dirname, '../src/styles')
     },

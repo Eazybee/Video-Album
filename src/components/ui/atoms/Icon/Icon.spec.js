@@ -19,7 +19,7 @@ describe('Icon Component', () => {
   it('should render big icon', () => {
     const { getByTestId } = render(
       <Icon
-        type='ThumbsDown'
+        type='Home'
         data-testid='icon'
         big
       />,
