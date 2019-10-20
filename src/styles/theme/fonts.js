@@ -1,4 +1,5 @@
 export const fontSizes = {
+  small: '.8em',
   normal: '1em',
   xxlarge: '3em',
 };

@@ -15,10 +15,10 @@ describe('Input Component', () => {
       line-height: 1.2em;
       letter-spacing: .1em;
       display: inline;
-      border-radius: .4rem;
+      border-radius: .4em;
       outline: 0;
-      border: .2em solid #719192;
-      color: #719192;
+      border: .1em solid #719192;
+      color: #424546;
       transition: .3s linear;
     `);
   });
@@ -33,5 +33,21 @@ describe('Input Component', () => {
 
     const inputElement = getByPlaceholderText('John Doe');
     expect(inputElement.type).toBe('password');
+  });
+
+  it('should have red border on error', () => {
+    const { getByPlaceholderText } = render(
+      <Input
+        type='email'
+        placeholder='JohnDoe@test.com'
+        error='error'
+      />,
+    );
+
+    const inputElement = getByPlaceholderText('JohnDoe@test.com');
+    expect(inputElement.type).toBe('email');
+    expect(inputElement).toHaveStyle(`
+      border: .1em solid #FF0000;
+    `);
   });
 });

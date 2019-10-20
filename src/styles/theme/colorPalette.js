@@ -5,11 +5,12 @@ const color = {
   danger: '#FF0000',
   transparent: 'transparent',
   grey: '#719192',
+  ash: '#424546',
 };
 
 const {
   primary, white, transparent,
-  danger, black, grey,
+  danger, black, grey, ash,
 } = color;
 
 export const textColors = {
@@ -18,6 +19,7 @@ export const textColors = {
   danger,
   black,
   grey,
+  ash,
 };
 
 export const backgroundColors = {

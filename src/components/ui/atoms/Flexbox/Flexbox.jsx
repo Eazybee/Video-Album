@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -16,24 +17,24 @@ const Flexbox = ({
 }) => {
   const FLexContainer = styled(type)`
     ${({
-      padding,
-      margin,
-      flexDirection,
-      flexWrap,
-      justifyContent,
-      hasBottomBorder,
-      theme: { spacings, textColors }
-    }) => `
+    padding,
+    margin,
+    flexDirection,
+    flexWrap,
+    justifyContent,
+    hasBottomBorder,
+    theme: { spacings, textColors },
+  }) => `
       display: flex;
       padding: ${spacings[padding]};
       margin: ${spacings[margin]};
       flex-direction: ${flexDirection};
       flex-wrap: ${flexWrap};
       justify-content: ${justifyContent};
-      border-bottom: ${hasBottomBorder ? `solid .2em ${textColors.grey}` : '' };
+      border-bottom: ${hasBottomBorder ? `solid .2em ${textColors.grey}` : ''};
     `}`;
 
-    return (
+  return (
       <FLexContainer
         padding={padding}
         margin={padding}
@@ -45,7 +46,7 @@ const Flexbox = ({
       >
         {children}
       </FLexContainer>
-    );
+  );
 };
 
 Flexbox.defaultProps = {

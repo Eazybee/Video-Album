@@ -30,7 +30,7 @@ Button.Container = styled.button`
     border: solid .1em ${type === 'primary' ? textColors.primary : textColors.danger};
     display: ${display};
     padding: .5em 1em;
-    border-radius: .4rem;
+    border-radius: .4em;
     outline: 0;
     cursor: pointer;
     transition: .3s linear;

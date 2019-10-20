@@ -14,7 +14,7 @@ describe('Buttton Component', () => {
       border: solid .1em #494ca2;
       display: inline;
       padding: .5em 1em;
-      border-radius: .4rem;
+      border-radius: .4em;
       outline: 0;
       transition: .3s linear;
     `);
