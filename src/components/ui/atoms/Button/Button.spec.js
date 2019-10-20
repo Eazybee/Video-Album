@@ -13,7 +13,7 @@ describe('Buttton Component', () => {
       color: #494ca2;
       border: solid .1em #494ca2;
       display: inline;
-      padding: .3em 1em;
+      padding: .5em 1em;
       border-radius: .4rem;
       outline: 0;
       transition: .3s linear;
@@ -25,14 +25,8 @@ describe('Buttton Component', () => {
 
     expect(getByText('Submit')).toBeTruthy();
     expect(getByText('Submit')).toHaveStyle(`
-      background-color: transparent;
       color: #FF0000;
       border: solid .1em #FF0000;
-      display: inline;
-      padding: .3em 1em;
-      border-radius: .4rem;
-      outline: 0;
-      transition: .3s linear;
     `);
   });
 });
