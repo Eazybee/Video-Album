@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 describe('Icon Component', () => {
   it('should render with default css', () => {
-    const { getByTestId } = render(<Icon type='ThumbsDown' data-testid='icon'/>);
+    const { getByTestId } = render(<Icon icon='faRegular/ThumbsDown' data-testid='icon'/>);
 
     expect(getByTestId('icon')).toBeTruthy();
     expect(getByTestId('icon')).toHaveStyle(`
@@ -19,7 +19,7 @@ describe('Icon Component', () => {
   it('should render big icon', () => {
     const { getByTestId } = render(
       <Icon
-        type='Home'
+        icon='faSolid/Home'
         data-testid='icon'
         big
       />,
