@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { render, fireEvent } from '<src>/helpers/testUtils';
-import '@testing-library/jest-dom/extend-expect';
 import Rating from './Rating';
 
 

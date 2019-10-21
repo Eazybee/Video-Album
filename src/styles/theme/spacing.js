@@ -1,9 +1,10 @@
 export const spacings = {
   auto: 'auto',
   zero: '0',
+  xxsm: '.1em',
   md: '.5em',
   fw: '100%',
-  xxsm: '.1em',
+  x: '10em',
   input: '20em',
 };
 

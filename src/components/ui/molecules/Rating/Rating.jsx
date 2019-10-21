@@ -5,20 +5,24 @@ import Icon from '<atoms>/Icon/Icon';
 import Text from '<atoms>/Text/Text';
 
 const Flexbox = getContainer();
-const Rating = ({ count, icon, onClick }) => (
-    <Flexbox>
+const Rating = ({ count, icon, onClick, alignItem }) => (
+    <Flexbox alignItem={alignItem}>
       <>
-        <Text padding='xxsm'>{count}</Text>
+        <Text fontSize='md'>{count}</Text>
         <Icon icon={icon} onClick={onClick}/>
       </>
     </Flexbox>
 );
 
+Rating.defaultProps = {
+  alignItem: 'auto',
+};
 
 Rating.propTypes = {
   count: PropTypes.number.isRequired,
   icon: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  alignItem: PropTypes.oneOf(['auto', 'center']),
 };
 
 export default Rating;
