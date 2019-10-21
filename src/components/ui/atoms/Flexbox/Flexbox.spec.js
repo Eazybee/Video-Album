@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from '<src>/helpers/testUtils';
-import Flexbox from './Flexbox';
+import getContainer from './Flexbox';
 import '@testing-library/jest-dom/extend-expect';
 
 
 describe('Flexbox Component', () => {
   it('should render with default css', () => {
+    const Flexbox = getContainer();
     const { getByText } = render(<Flexbox>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toBeTruthy();
@@ -20,12 +21,14 @@ describe('Flexbox Component', () => {
   });
 
   it('should render header tag element', () => {
-    const { getByText } = render(<Flexbox type='header'>This is a flebox</Flexbox>);
+    const Flexbox = getContainer('header');
+    const { getByText } = render(<Flexbox>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox').tagName).toBe('HEADER');
   });
 
   it('should have border bottom', () => {
+    const Flexbox = getContainer();
     const { getByText } = render(<Flexbox hasBottomBorder>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toHaveStyle(`
@@ -39,6 +42,7 @@ describe('Flexbox Component', () => {
   });
 
   it('should have border bottom', () => {
+    const Flexbox = getContainer();
     const { getByText } = render(<Flexbox hasBottomBorder>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toHaveStyle(`
@@ -47,6 +51,7 @@ describe('Flexbox Component', () => {
   });
 
   it('should have md padding', () => {
+    const Flexbox = getContainer();
     const { getByText } = render(<Flexbox padding='md'>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toHaveStyle(`
@@ -55,6 +60,7 @@ describe('Flexbox Component', () => {
   });
 
   it('should have flex-direction column', () => {
+    const Flexbox = getContainer();
     const { getByText } = render(<Flexbox flexDirection='column'>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toHaveStyle(`
@@ -63,6 +69,7 @@ describe('Flexbox Component', () => {
   });
 
   it('should have justify content of space-between', () => {
+    const Flexbox = getContainer();
     const { getByText } = render(<Flexbox justifyContent='space-between'>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toHaveStyle(`

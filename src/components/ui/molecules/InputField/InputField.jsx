@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '<atoms>/Input/Input';
-import Flexbox from '<atoms>/Flexbox/Flexbox';
+import getFlexbox from '<atoms>/Flexbox/Flexbox';
 import Label from '<atoms>/Label/Label';
 import Text from '<atoms>/Text/Text';
 
+const Flexbox = getFlexbox();
 const InputField = ({
   label,
   flexDirection,
@@ -15,7 +16,7 @@ const InputField = ({
   id,
 }) => (
   <Flexbox
-   flexDirection={flexDirection}
+   flexDirection='column'
    flexWrap={flexWrap}
   >
     {label && <Label htmlFor={id} hasBottomMargin>
@@ -30,10 +31,13 @@ const InputField = ({
     </Label>}
     <Input {...inputProps} id={id} error={error}/>
     {showError
+     && error
      && <Text
           color='danger'
           fontSize='small'
           fontWeight='bold'
+          display='inline'
+          padding='xxsm'
         >
           {error}
         </Text>

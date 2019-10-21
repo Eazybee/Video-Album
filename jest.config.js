@@ -6,6 +6,7 @@ const config = {
     '^<pages>/(.*)$': '<rootDir>/src/components/pages/$1',
     '^<components>/(.*)$': '<rootDir>/src/components/$1',
     '^<atoms>/(.*)$': '<rootDir>/src/components/ui/atoms/$1',
+    '^<molecules>/(.*)$': '<rootDir>/src/components/ui/molecules/$1',
     '^<routes>/(.*)$': '<rootDir>/src/routes/$1',
     '^<styles>/(.*)$': '<rootDir>/src/styles/$1',
   },

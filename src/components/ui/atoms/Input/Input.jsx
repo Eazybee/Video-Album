@@ -26,7 +26,7 @@ Input.Container = styled.input`
     theme: { textColors, spacings },
   }) => `
     padding: .5em .5em;
-    line-height: 1.2em;
+    line-height: 1.5em;
     letter-spacing: .1em;
     display: inline;
     border-radius: .4em;

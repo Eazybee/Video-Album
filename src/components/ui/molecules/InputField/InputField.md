@@ -7,7 +7,6 @@ InputField example:
   <InputField
     inputProps={{
       placeholder:'John Doe',
-      value: 'invalid input'
     }}
     label='Full Name'
     id='name'
@@ -23,8 +22,21 @@ InputField example:
       width: 'auto'
     }}
     label='Full Name'
-    id='name'
+    id='name2'
     error='only alphabet are allowed'
     flexWrap='nowrap'
+  />
+```
+
+```jsx
+  <InputField
+    inputProps={{
+      placeholder:'John Doe',
+      width: 'auto'
+    }}
+    id='name3'
+    error='only alphabet are allowed'
+    flexWrap='nowrap'
+    showError
   />
 ```

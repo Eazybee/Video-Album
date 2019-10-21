@@ -4,5 +4,5 @@ Button example:
 ```
 
 ```jsx
-  <Button type='danger'>Danger</Button>
+  <Button danger>Danger</Button>
 ```
