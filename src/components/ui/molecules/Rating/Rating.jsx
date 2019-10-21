@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Flexbox from '<atoms>/Flexbox/Flexbox';
+import getContainer from '<atoms>/Flexbox/Flexbox';
 import Icon from '<atoms>/Icon/Icon';
 import Text from '<atoms>/Text/Text';
 
+const Flexbox = getContainer();
 const Rating = ({ count, icon, onClick }) => (
     <Flexbox>
       <>

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = ({
-  type,
+  danger,
   children,
   display,
   ...props
 }) => (
   <Button.Container
-    type={type}
+    danger={danger}
     display={display}
     {...props}
   >
@@ -19,15 +19,15 @@ const Button = ({
 
 Button.Container = styled.button`
   ${({
-    type,
+    danger,
     display,
     theme: {
       backgroundColors, textColors,
     },
   }) => `
     background-color: ${backgroundColors.transparent};
-    color: ${type === 'primary' ? textColors.primary : textColors.danger};
-    border: solid .1em ${type === 'primary' ? textColors.primary : textColors.danger};
+    color: ${danger ? textColors.danger : textColors.primary};
+    border: solid .1em ${danger ? textColors.danger : textColors.primary};
     display: ${display};
     padding: .5em 1em;
     border-radius: .4em;
@@ -36,7 +36,7 @@ Button.Container = styled.button`
     transition: .3s linear;
 
     &:hover, &:active  {
-      background-color: ${type === 'primary' ? textColors.primary : textColors.danger};
+      background-color: ${danger ? textColors.danger : textColors.primary};
       color: ${textColors.white};
       box-shadow: .1em .1em .4em ${textColors.grey};
     }
@@ -44,13 +44,13 @@ Button.Container = styled.button`
 `;
 
 Button.defaultProps = {
-  type: 'primary',
   display: 'inline',
+  danger: false,
 };
 
 
 Button.propTypes = {
-  type: PropTypes.oneOf(['primary', 'danger']),
+  danger: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.node]).isRequired,
   display: PropTypes.oneOf(['block', 'inline']),
 };

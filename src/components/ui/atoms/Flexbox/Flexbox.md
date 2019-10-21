@@ -1,30 +1,37 @@
 Flexbox example:
 ```jsx
-  <Flexbox type='div'>Default</Flexbox>
+  import getFlexbox  from './Flexbox.jsx';
+  const Flex = getFlexbox();
+  <Flex type='div'>Default</Flex>
 ```
 
 ```jsx
-  <Flexbox
-    type='header'
+  import getFlexbox  from './Flexbox.jsx';
+  const Flex = getFlexbox('header');
+  <Flex
   >
     This is an header
-  </Flexbox>
+  </Flex>
 ```
 
 
 ```jsx
-  <Flexbox
+  import getFlexbox  from './Flexbox.jsx';
+  const Flex = getFlexbox();
+  <Flex
     hasBottomBorder
   >
     I have a bottom border
-  </Flexbox>
+  </Flex>
 ```
 
 ```jsx
-  <Flexbox
+  import getFlexbox  from './Flexbox.jsx';
+  const Flex = getFlexbox();
+  <Flex
     justifyContent='space-between'
   >
     <p>I am right</p>
     <p>I am left</p>
-  </Flexbox>
+  </Flex>
 ```

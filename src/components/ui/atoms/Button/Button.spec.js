@@ -21,7 +21,7 @@ describe('Buttton Component', () => {
   });
 
   it('should render abort button', () => {
-    const { getByText } = render(<Button type='danger'>Submit</Button>);
+    const { getByText } = render(<Button danger>Submit</Button>);
 
     expect(getByText('Submit')).toBeTruthy();
     expect(getByText('Submit')).toHaveStyle(`
