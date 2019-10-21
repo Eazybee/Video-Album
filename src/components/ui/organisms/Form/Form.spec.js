@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '<src>/helpers/testUtils';
-import '@testing-library/jest-dom/extend-expect';
 import Form from './Form';
 
 const setup = (alterProp = {}) => {
@@ -9,7 +8,7 @@ const setup = (alterProp = {}) => {
     rules: {
       firstName: 'required|alpha',
     },
-    submit: e => console.log(e),
+    submit: () => {},
     inputs: [
       {
         inputProps: {

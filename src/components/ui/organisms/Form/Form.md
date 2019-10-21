@@ -25,7 +25,7 @@ import useformbee from 'useformbee';
   buttonText='Submit'
   rules = {{
     firstName: 'required|alpha',
-    age: 'number'
+    age: 'numeric'
   }}
   submit ={e => console.log(e)}
   />
@@ -41,7 +41,7 @@ import useformbee from 'useformbee';
         inputProps: {
           placeholder: '*******',
           type: 'password',
-          name: 'pasword',
+          name: 'password',
           required: true,
         },
         id: 6,

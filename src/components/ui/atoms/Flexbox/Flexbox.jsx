@@ -16,6 +16,7 @@ const getContainer = (tag = 'div') => {
     children,
     width,
     height,
+    alignItem,
     ...props
   }) => (
     <Flexbox.Container
@@ -27,6 +28,7 @@ const getContainer = (tag = 'div') => {
       justifyContent={justifyContent}
       width={width}
       height={height}
+      alignItem={alignItem}
       {...props}
     >
       {children}
@@ -43,6 +45,7 @@ const getContainer = (tag = 'div') => {
     hasBottomBorder,
     width,
     height,
+    alignItem,
     theme: { spacings, textColors },
   }) => `
     display: flex;
@@ -52,8 +55,9 @@ const getContainer = (tag = 'div') => {
     flex-wrap: ${flexWrap};
     justify-content: ${justifyContent};
     border-bottom: ${hasBottomBorder ? `solid .2em ${textColors.grey}` : ''};
-    width: ${spacings[width]}
-    height: ${spacings[height]}
+    width: ${spacings[width]};
+    height: ${spacings[height]};
+    align-items: ${alignItem};
   `}`;
 
   Flexbox.defaultProps = {
@@ -65,6 +69,7 @@ const getContainer = (tag = 'div') => {
     margin: 'zero',
     width: 'auto',
     height: 'auto',
+    alignItem: 'auto',
   };
 
   const { spacings } = theme;
@@ -79,6 +84,7 @@ const getContainer = (tag = 'div') => {
     hasBottomBorder: PropTypes.bool,
     width: PropTypes.oneOf(Object.keys(spacings)),
     height: PropTypes.oneOf(Object.keys(spacings)),
+    alignItem: PropTypes.oneOf(['auto', 'center']),
   };
 
   return Flexbox;
