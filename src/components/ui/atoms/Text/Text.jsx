@@ -12,7 +12,6 @@ const Text = ({
   children,
   padding,
   hasRightMargin,
-  onChange,
   ...props
 }) => (
   <Text.Container
@@ -23,7 +22,6 @@ const Text = ({
     fontWeight={fontWeight}
     padding={padding}
     hasRightMargin={hasRightMargin}
-    onChange={onChange}
     {...props}
   >
     {children}

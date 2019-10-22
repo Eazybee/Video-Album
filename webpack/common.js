@@ -18,6 +18,8 @@ module.exports = {
       '<components>': path.resolve(__dirname, '../src/components'),
       '<atoms>': path.resolve(__dirname, '../src/components/ui/atoms'),
       '<molecules>': path.resolve(__dirname, '../src/components/ui/molecules'),
+      '<organisms>': path.resolve(__dirname, '../src/components/ui/organisms'),
+      '<context>': path.resolve(__dirname, '../src/context'),
       '<routes>': path.resolve(__dirname, '../src/routes'),
       '<styles>': path.resolve(__dirname, '../src/styles')
     },

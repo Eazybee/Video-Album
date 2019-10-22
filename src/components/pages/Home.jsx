@@ -1,8 +1,20 @@
 import React from 'react';
-import Text from '../ui/atoms/Text/Text';
+import Header from '<organisms>/Header/Header';
+import Video from '<organisms>/Video/Video';
+import getFlexbox from '<atoms>/Flexbox/Flexbox';
+import videoMockData from './VideoMockData';
 
+
+// const Main = getFlexbox('main');
 const Homepage = () => (
-  <Text fontSize='normal' color='primary'>Welcome to Vide Album</Text>
+  <>
+    <Header />
+    <main>
+      <Video {...videoMockData}/>
+      <Video {...videoMockData}/>
+      <Video {...videoMockData}/>
+    </main>
+  </>
 );
 
 export default Homepage;

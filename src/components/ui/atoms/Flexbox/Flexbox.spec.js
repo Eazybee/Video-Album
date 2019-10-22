@@ -13,7 +13,7 @@ describe('Flexbox Component', () => {
     expect(getByText('This is a flebox').tagName).toBe('DIV');
     expect(getByText('This is a flebox')).toHaveStyle(`
       display: flex;
-      padding: 0;
+      padding: 0px 0px 0px 0px;
       margin: 0;
       flex-direction: row;
       flex-wrap: wrap;
@@ -33,7 +33,7 @@ describe('Flexbox Component', () => {
 
     expect(getByText('This is a flebox')).toHaveStyle(`
       display: flex;
-      padding: 0;
+      padding: 0px 0px 0px 0px;
       margin: 0;
       flex-direction: row;
       flex-wrap: wrap;
@@ -47,6 +47,7 @@ describe('Flexbox Component', () => {
 
     expect(getByText('This is a flebox')).toHaveStyle(`
       border-bottom: solid .2em #719192;
+      padding: 0px 0px 0px 0px;
     `);
   });
 
@@ -55,7 +56,7 @@ describe('Flexbox Component', () => {
     const { getByText } = render(<Flexbox padding='md'>This is a flebox</Flexbox>);
 
     expect(getByText('This is a flebox')).toHaveStyle(`
-      padding: .5em;
+      padding: .5em .5em .5em .5em;
     `);
   });
 

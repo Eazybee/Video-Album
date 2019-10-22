@@ -5,8 +5,8 @@ import Icon from '<atoms>/Icon/Icon';
 import Text from '<atoms>/Text/Text';
 
 const Flexbox = getContainer();
-const Rating = ({ count, icon, onClick, alignItem }) => (
-    <Flexbox alignItem={alignItem}>
+const Rating = ({ count, icon, onClick, alignItems }) => (
+    <Flexbox alignItems={alignItems}>
       <>
         <Text fontSize='md'>{count}</Text>
         <Icon icon={icon} onClick={onClick}/>
@@ -15,14 +15,14 @@ const Rating = ({ count, icon, onClick, alignItem }) => (
 );
 
 Rating.defaultProps = {
-  alignItem: 'auto',
+  alignItems: 'baseline',
 };
 
 Rating.propTypes = {
   count: PropTypes.number.isRequired,
   icon: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  alignItem: PropTypes.oneOf(['auto', 'center']),
+  alignItems: PropTypes.oneOf(['baseline', 'center']),
 };
 
 export default Rating;

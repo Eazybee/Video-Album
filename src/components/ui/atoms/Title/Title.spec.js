@@ -14,7 +14,7 @@ describe('Title Component', () => {
       text-align: left;
       font-size: 1em;
       display: block;
-      color: #FF0000;
+      color: #494ca2;
       padding: 0;
     `);
   });
