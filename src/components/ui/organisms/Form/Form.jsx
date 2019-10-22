@@ -7,6 +7,13 @@ import Button from '<atoms>/Button/Button';
 import theme from '<styles>/theme';
 
 const Flexbox = getFlexbox();
+const mediaQuery = `
+  @media screen  and (max-width:480px){
+    flex-direction: column;
+    width: calc(100% - 1.6em);
+    margin: 0 auto;
+  }
+`;
 const Form = ({
   inputs, rules, buttonText, submit, flexDirection, width, height,
 }) => {
@@ -34,6 +41,7 @@ const Form = ({
         {allInputs}
         <Button
           type='submit'
+          mediaQuery={mediaQuery}
         >
           {buttonText}
         </Button>

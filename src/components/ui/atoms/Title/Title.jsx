@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -25,8 +26,9 @@ const Title = ({
       fontSizes, textColors, spacings,
     },
   }) => `
-    font-size: ${fontSizes[fontSize]};
+    margin: 0;
     font-weight: bold;
+    font-size: ${fontSizes[fontSize]};
     display: ${display};
     padding: ${spacings[padding]};
     color: ${textColors[color]};
@@ -52,7 +54,7 @@ Title.defaultProps = {
   display: 'block',
   textAlign: 'left',
   fontSize: 'normal',
-  color: 'danger',
+  color: 'primary',
   padding: 'zero',
 };
 

@@ -1,0 +1,4 @@
+Header example:
+```jsx
+  <Head />
+```

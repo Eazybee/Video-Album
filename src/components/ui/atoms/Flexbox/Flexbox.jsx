@@ -16,7 +16,10 @@ const getContainer = (tag = 'div') => {
     children,
     width,
     height,
-    alignItem,
+    alignItems,
+    sidePadding,
+    hasMarginBottom,
+    mediaQuery,
     ...props
   }) => (
     <Flexbox.Container
@@ -28,7 +31,10 @@ const getContainer = (tag = 'div') => {
       justifyContent={justifyContent}
       width={width}
       height={height}
-      alignItem={alignItem}
+      alignItems={alignItems}
+      sidePadding={sidePadding}
+      hasMarginBottom={hasMarginBottom}
+      mediaQuery={mediaQuery}
       {...props}
     >
       {children}
@@ -45,7 +51,10 @@ const getContainer = (tag = 'div') => {
     hasBottomBorder,
     width,
     height,
-    alignItem,
+    alignItems,
+    sidePadding,
+    hasMarginBottom,
+    mediaQuery,
     theme: { spacings, textColors },
   }) => `
     display: flex;
@@ -57,7 +66,12 @@ const getContainer = (tag = 'div') => {
     border-bottom: ${hasBottomBorder ? `solid .2em ${textColors.grey}` : ''};
     width: ${spacings[width]};
     height: ${spacings[height]};
-    align-items: ${alignItem};
+    align-items: ${alignItems};
+    padding-right: ${sidePadding ? spacings[sidePadding] : spacings[padding]};
+    padding-left: ${sidePadding ? spacings[sidePadding] : spacings[padding]};
+    padding-bottom: ${hasMarginBottom ? '3em' : spacings[padding]}
+
+    ${mediaQuery}
   `}`;
 
   Flexbox.defaultProps = {
@@ -69,7 +83,8 @@ const getContainer = (tag = 'div') => {
     margin: 'zero',
     width: 'auto',
     height: 'auto',
-    alignItem: 'auto',
+    alignItems: 'baseline',
+    hasMarginBottom: false,
   };
 
   const { spacings } = theme;
@@ -77,6 +92,7 @@ const getContainer = (tag = 'div') => {
   Flexbox.propTypes = {
     children: PropTypes.node,
     padding: PropTypes.oneOf(Object.keys(spacings)),
+    sidePadding: PropTypes.oneOf(Object.keys(spacings)),
     margin: PropTypes.oneOf(Object.keys(spacings)),
     flexDirection: PropTypes.oneOf(['row', 'column']),
     flexWrap: PropTypes.oneOf(['nowrap', 'wrap']),
@@ -84,7 +100,9 @@ const getContainer = (tag = 'div') => {
     hasBottomBorder: PropTypes.bool,
     width: PropTypes.oneOf(Object.keys(spacings)),
     height: PropTypes.oneOf(Object.keys(spacings)),
-    alignItem: PropTypes.oneOf(['auto', 'center']),
+    alignItems: PropTypes.oneOf(['baseline', 'center']),
+    hasMarginBottom: PropTypes.bool,
+    mediaQuery: PropTypes.string,
   };
 
   return Flexbox;

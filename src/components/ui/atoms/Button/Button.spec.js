@@ -13,7 +13,7 @@ describe('Buttton Component', () => {
       color: #494ca2;
       border: solid .1em #494ca2;
       display: inline;
-      padding: .5em 1em;
+      padding: .7em 1em;
       border-radius: .4em;
       outline: 0;
       transition: .3s linear;

@@ -5,6 +5,14 @@ import getFlexbox from '<atoms>/Flexbox/Flexbox';
 import Label from '<atoms>/Label/Label';
 import Text from '<atoms>/Text/Text';
 
+const mediaQuery = `
+  @media screen  and (max-width:480px){
+    padding: .4em 0em ;
+    flex-direction: column;
+    width: calc(100%);
+    align-items: center;
+  }
+`;
 const Flexbox = getFlexbox();
 const InputField = ({
   label,
@@ -18,6 +26,7 @@ const InputField = ({
   <Flexbox
    flexDirection='column'
    flexWrap={flexWrap}
+   mediaQuery={mediaQuery}
   >
     {label && <Label htmlFor={id} hasBottomMargin>
         <Text
