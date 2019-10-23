@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import getFlexbox from '<atoms>/Flexbox/Flexbox';
 import Icon from '<atoms>/Icon/Icon';
@@ -11,19 +12,13 @@ import UserContext from '<context>/context';
 const Header = getFlexbox('header');
 const Flexbox = getFlexbox();
 
-const mediaQuery = `
-  @media screen and (max-width:685px){
-    padding: .8em;
-    // width: calc(100% - 1.6em);
-    justify-content: space-between;
-    margin: 0 auto;
-  }
-`;
-const Head = () => {
+
+const Head = ({ history }) => {
   const [user, setUser] = useContext(UserContext);
 
   const login = e => setUser(e.email);
   const logout = () => setUser('');
+  const share = () => history.push('/share');
 
   return (
     <Header
@@ -32,14 +27,14 @@ const Head = () => {
       padding='md'
       hasBottomBorder
     >
-      <Flexbox flexWrap='nowrap' alignItems='center'>
+      <Flexbox flexWrap='nowrap' alignItems='center' onClick={() => history.push('/')}>
          <Icon icon='faSolid/Home' big />
          <Title type='h1' fontSize='xxlarge' > Funny Movies </Title>
       </Flexbox>
       <Flexbox flexDirection='row' justifyContent='space-between'>
         { user
           ? <Flexbox >
-              <Flexbox>
+              <Flexbox margin='md'>
                 <Flexbox padding='xxsm'>
                   <Text display='inline-block'>Welcome</Text>
                 </Flexbox>
@@ -49,7 +44,7 @@ const Head = () => {
               </Flexbox>
               <Flexbox>
                 <Flexbox padding='xxsm'>
-                  <Button>Share a movie</Button>
+                  <Button onClick={share}>Share a movie</Button>
                 </Flexbox>
                 <Flexbox padding='xxsm'>
                   <Button danger onClick={logout}>Logout</Button>
@@ -90,4 +85,11 @@ const Head = () => {
   );
 };
 
-export default Head;
+Head.defaultProps = {
+  history: {},
+};
+
+Head.propTypes = {
+  history: PropTypes.object.isRequired,
+};
+export default withRouter(Head);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { render, fireEvent } from '<src>/helpers/testUtils';
 import UserContext from '<context>/context';
 import Header from './Header';
@@ -7,9 +8,11 @@ const HeaderWithContext = () => {
   const [user, setUser] = useState('');
 
   return (
-    <UserContext.Provider value={[user, setUser]} >
-      <Header>This is a flebox</Header>
-    </UserContext.Provider>
+    <MemoryRouter>
+      <UserContext.Provider value={[user, setUser]} >
+        <Header>This is a flebox</Header>
+      </UserContext.Provider>
+    </MemoryRouter>
   );
 };
 
@@ -17,7 +20,7 @@ describe('Header Organism', () => {
   it('should render successfully', () => {
     const {
       getByText, getByRole, getByPlaceholderText,
-    } = render(<Header>This is a flebox</Header>);
+    } = render(<HeaderWithContext />);
 
     const logo = getByRole('icon');
     const title = getByText('Funny Movies');
@@ -58,9 +61,11 @@ describe('Header Organism', () => {
       getByText, getByPlaceholderText, getByRole,
     } = render(<HeaderWithContext />);
 
+    fireEvent.click(getByRole('icon'));
     fireEvent.change(getByPlaceholderText('JohnDoe@mail.com'), { target: { value: 'test@test.com' } });
     fireEvent.change(getByPlaceholderText('********'), { target: { value: '1erghj#ffs' } });
     fireEvent.click(getByText('Login / Register'));
+    fireEvent.click(getByText('Share a movie'));
     fireEvent.click(getByText('Logout'));
 
     expect(getByRole('form')).toBeTruthy();

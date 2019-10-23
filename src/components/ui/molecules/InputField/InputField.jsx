@@ -27,6 +27,8 @@ const InputField = ({
    flexDirection='column'
    flexWrap={flexWrap}
    mediaQuery={mediaQuery}
+   margin={label ? 'inputMargin' : 'zero'}
+   width={label ? 'fw' : 'auto'}
   >
     {label && <Label htmlFor={id} hasBottomMargin>
         <Text

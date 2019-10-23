@@ -42,6 +42,7 @@ const Form = ({
         <Button
           type='submit'
           mediaQuery={mediaQuery}
+          width={flexDirection === 'column' ? 'fw' : 'auto'}
         >
           {buttonText}
         </Button>
