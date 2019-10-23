@@ -19,12 +19,14 @@ const getContainer = (tag = 'div') => {
     alignItems,
     sidePadding,
     hasMarginBottom,
+    leftPadding,
+    onClick,
     mediaQuery,
     ...props
   }) => (
     <Flexbox.Container
       padding={padding}
-      margin={padding}
+      margin={margin}
       hasBottomBorder={hasBottomBorder}
       flexDirection={flexDirection}
       flexWrap={flexWrap}
@@ -34,6 +36,8 @@ const getContainer = (tag = 'div') => {
       alignItems={alignItems}
       sidePadding={sidePadding}
       hasMarginBottom={hasMarginBottom}
+      leftPadding={leftPadding}
+      onClick={onClick}
       mediaQuery={mediaQuery}
       {...props}
     >
@@ -53,7 +57,9 @@ const getContainer = (tag = 'div') => {
     height,
     alignItems,
     sidePadding,
+    leftPadding,
     hasMarginBottom,
+    onClick,
     mediaQuery,
     theme: { spacings, textColors },
   }) => `
@@ -68,8 +74,9 @@ const getContainer = (tag = 'div') => {
     height: ${spacings[height]};
     align-items: ${alignItems};
     padding-right: ${sidePadding ? spacings[sidePadding] : spacings[padding]};
-    padding-left: ${sidePadding ? spacings[sidePadding] : spacings[padding]};
-    padding-bottom: ${hasMarginBottom ? '3em' : spacings[padding]}
+    padding-left: ${spacings[sidePadding] || spacings[leftPadding] || spacings[padding]};
+    padding-bottom: ${hasMarginBottom ? '3em' : spacings[padding]};
+    cursor: ${onClick ? 'pointer' : 'auto'};
 
     ${mediaQuery}
   `}`;
@@ -93,15 +100,17 @@ const getContainer = (tag = 'div') => {
     children: PropTypes.node,
     padding: PropTypes.oneOf(Object.keys(spacings)),
     sidePadding: PropTypes.oneOf(Object.keys(spacings)),
+    leftPadding: PropTypes.oneOf(Object.keys(spacings)),
     margin: PropTypes.oneOf(Object.keys(spacings)),
     flexDirection: PropTypes.oneOf(['row', 'column']),
     flexWrap: PropTypes.oneOf(['nowrap', 'wrap']),
-    justifyContent: PropTypes.oneOf(['flex-start', 'space-between', 'space-around']),
+    justifyContent: PropTypes.oneOf(['flex-start', 'space-between', 'space-around', 'center']),
     hasBottomBorder: PropTypes.bool,
     width: PropTypes.oneOf(Object.keys(spacings)),
     height: PropTypes.oneOf(Object.keys(spacings)),
     alignItems: PropTypes.oneOf(['baseline', 'center']),
     hasMarginBottom: PropTypes.bool,
+    onClick: PropTypes.func,
     mediaQuery: PropTypes.string,
   };
 

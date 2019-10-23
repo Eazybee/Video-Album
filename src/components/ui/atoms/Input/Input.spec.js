@@ -50,4 +50,18 @@ describe('Input Component', () => {
       border: .1em solid #FF0000;
     `);
   });
+
+  it('should have margin to and bottom', () => {
+    const { getByPlaceholderText } = render(
+      <Input
+        placeholder='Test'
+        hasVerticalMargin
+      />,
+    );
+
+    const inputElement = getByPlaceholderText('Test');
+    expect(inputElement).toHaveStyle(`
+      margin: .5em 0;
+    `);
+  });
 });
