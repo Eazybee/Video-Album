@@ -4,7 +4,7 @@ import getContainer from './Flexbox';
 import '@testing-library/jest-dom/extend-expect';
 
 
-describe('Flexbox Component', () => {
+describe('Flexbox Atom', () => {
   it('should render with default css', () => {
     const Flexbox = getContainer();
     const { getByText } = render(<Flexbox>This is a flebox</Flexbox>);

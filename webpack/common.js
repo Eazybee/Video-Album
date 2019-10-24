@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 module.exports = {
   entry: path.join(__dirname, '../src', 'index.js'),
   output: {
@@ -15,6 +16,7 @@ module.exports = {
     alias: {
       '<src>': path.resolve(__dirname, '../src'),
       '<pages>': path.resolve(__dirname, '../src/components/pages'),
+      '<api>': path.resolve(__dirname, '../src/api'),
       '<components>': path.resolve(__dirname, '../src/components'),
       '<atoms>': path.resolve(__dirname, '../src/components/ui/atoms'),
       '<molecules>': path.resolve(__dirname, '../src/components/ui/molecules'),

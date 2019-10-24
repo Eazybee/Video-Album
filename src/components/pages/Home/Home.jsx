@@ -1,15 +1,16 @@
-import React from 'react';
-import PageLayout from '../../ui/layout/Layout';
+import React, { useContext } from 'react';
+import PageLayout from '../../ui/layout/PageLayout';
 import Video from '<organisms>/Video/Video';
-import videoMockData from './VideoMockData';
+import VideoContext from '<context>/video';
 
 
-const Homepage = () => (
-  <PageLayout>
-    <Video {...videoMockData}/>
-    <Video {...videoMockData}/>
-    <Video {...videoMockData}/>
-  </PageLayout>
-);
+const Homepage = () => {
+  const [videos] = useContext(VideoContext);
+  return (
+      <PageLayout>
+        {videos.map((videoData, key) => <Video key={key} {...videoData}/>)}
+      </PageLayout>
+  );
+};
 
 export default Homepage;

@@ -3,7 +3,7 @@ import { render } from '<src>/helpers/testUtils';
 import '@testing-library/jest-dom/extend-expect';
 import InputField from './InputField';
 
-describe('InputField Component', () => {
+describe('InputField Molecule', () => {
   it('should render with input element', () => {
     const { getByPlaceholderText } = render(<InputField inputProps={{ placeholder: 'Default' }} />);
 

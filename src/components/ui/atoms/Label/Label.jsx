@@ -2,6 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+/**
+ * @description - Label Component
+ *
+ * @prop {boolean} hasBottomMargin - hasBottomMargin
+ * @prop {string} children - children
+ *
+ * @return {component} Label
+ */
 const Label = ({
   hasBottomMargin,
   children,

@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<styles>/theme';
 
-
+/**
+ * @description - Get a flex container
+ *
+ * @prop {strin} tag - HTML tag name
+ * @return {component} Flexbox
+ */
 const getContainer = (tag = 'div') => {
   const Flexbox = ({
     padding,
@@ -19,6 +24,7 @@ const getContainer = (tag = 'div') => {
     alignItems,
     sidePadding,
     hasMarginBottom,
+    hasMarginTop,
     leftPadding,
     onClick,
     mediaQuery,
@@ -36,6 +42,7 @@ const getContainer = (tag = 'div') => {
       alignItems={alignItems}
       sidePadding={sidePadding}
       hasMarginBottom={hasMarginBottom}
+      hasMarginTop={hasMarginTop}
       leftPadding={leftPadding}
       onClick={onClick}
       mediaQuery={mediaQuery}
@@ -59,6 +66,7 @@ const getContainer = (tag = 'div') => {
     sidePadding,
     leftPadding,
     hasMarginBottom,
+    hasMarginTop,
     onClick,
     mediaQuery,
     theme: { spacings, textColors },
@@ -76,6 +84,7 @@ const getContainer = (tag = 'div') => {
     padding-right: ${sidePadding ? spacings[sidePadding] : spacings[padding]};
     padding-left: ${spacings[sidePadding] || spacings[leftPadding] || spacings[padding]};
     padding-bottom: ${hasMarginBottom ? '3em' : spacings[padding]};
+    padding-top: ${hasMarginTop ? '1.5em' : spacings[padding]};
     cursor: ${onClick ? 'pointer' : 'auto'};
 
     ${mediaQuery}
@@ -110,6 +119,7 @@ const getContainer = (tag = 'div') => {
     height: PropTypes.oneOf(Object.keys(spacings)),
     alignItems: PropTypes.oneOf(['baseline', 'center']),
     hasMarginBottom: PropTypes.bool,
+    hasMarginTop: PropTypes.bool,
     onClick: PropTypes.func,
     mediaQuery: PropTypes.string,
   };

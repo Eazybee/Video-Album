@@ -6,6 +6,16 @@ import * as faSolid from 'styled-icons/fa-solid';
 import * as faRegular from 'styled-icons/fa-regular';
 import theme from '<styles>/theme';
 
+/**
+ * @description - Icon Component
+ *
+ * @prop {string} icon - iconType/iconName
+ * @prop {bool} big - size
+ * @prop {string} color - color
+ * @prop {func} onClick - onCLick
+ *
+ * @return {component} Icon
+ */
 const Icon = ({
   icon,
   big,

@@ -3,16 +3,19 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import BaseRoute from '<routes>';
 import GlobalStyle from '<styles>/global';
 import ThemeWrapper from '<styles>/ThemeWrapper';
-import { UserProvider } from '../context/context';
+import { UserProvider } from '../context/user';
+import { VideoProvider } from '../context/video';
+
 
 const App = () => (
-
     <ThemeWrapper>
       <GlobalStyle/>
       <UserProvider>
-        <Router>
-          <BaseRoute />
-        </Router>
+        <VideoProvider>
+          <Router>
+            <BaseRoute />
+          </Router>
+        </VideoProvider>
       </UserProvider>
     </ThemeWrapper>
 );

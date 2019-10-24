@@ -7,12 +7,18 @@ import Text from '<atoms>/Text/Text';
 import Title from '<atoms>/Title/Title';
 import Button from '<atoms>/Button/Button';
 import Form from '<organisms>/Form/Form';
-import UserContext from '<context>/context';
+import UserContext from '<context>/user';
 
 const Header = getFlexbox('header');
 const Flexbox = getFlexbox();
 
-
+/**
+ * @description - Header Component
+ *
+ * @prop {object} history - arrayOf input props
+ *
+ * @return {component} Header
+ */
 const Head = ({ history }) => {
   const [user, setUser] = useContext(UserContext);
 
@@ -29,7 +35,7 @@ const Head = ({ history }) => {
     >
       <Flexbox flexWrap='nowrap' alignItems='center' onClick={() => history.push('/')}>
          <Icon icon='faSolid/Home' big />
-         <Title type='h1' fontSize='xxlarge' > Funny Movies </Title>
+         <Title type='h1' fontSize='xxlarge' >Funny Movies</Title>
       </Flexbox>
       <Flexbox flexDirection='row' justifyContent='space-between'>
         { user

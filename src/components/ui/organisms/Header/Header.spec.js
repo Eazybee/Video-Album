@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, fireEvent } from '<src>/helpers/testUtils';
-import UserContext from '<context>/context';
+import UserContext from '<context>/user';
 import Header from './Header';
 
 const HeaderWithContext = () => {

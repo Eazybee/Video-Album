@@ -7,13 +7,20 @@ import Button from '<atoms>/Button/Button';
 import theme from '<styles>/theme';
 
 const Flexbox = getFlexbox();
-const mediaQuery = `
-  @media screen  and (max-width:480px){
-    flex-direction: column;
-    width: calc(100% - 1.6em);
-    margin: 0 auto;
-  }
-`;
+
+/**
+ * @description - Form Component
+ *
+ * @prop {arrayOf} inputs - arrayOf input props
+ * @prop {object} rules - validatorjs rules
+ * @prop {string} buttonText - buttonText
+ * @prop {func} submit - submit
+ * @prop {string} flexDirection - flexDirection
+ * @prop {string} width - width
+ * @prop {string} height - height
+ *
+ * @return {component} Form
+ */
 const Form = ({
   inputs, rules, buttonText, submit, flexDirection, width, height,
 }) => {
@@ -41,7 +48,7 @@ const Form = ({
         {allInputs}
         <Button
           type='submit'
-          mediaQuery={mediaQuery}
+          mediaQuery={Form.mediaQuery}
           width={flexDirection === 'column' ? 'fw' : 'auto'}
         >
           {buttonText}
@@ -50,6 +57,14 @@ const Form = ({
     </form>
   );
 };
+
+Form.mediaQuery = `
+@media screen  and (max-width:518px){
+  flex-direction: column;
+  width: calc(100% - 1.6em);
+  margin: 0 auto;
+}
+`;
 
 Form.defaultProps = {
   buttonText: 'Submit',

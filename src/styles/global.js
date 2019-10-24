@@ -39,27 +39,27 @@ body {
 
     body , input, button{
       margin: 0;
-       font-size: 13px;
+      font-size: 14px;
     }
 }
 
 @media screen and (min-width:400px) and (max-width:599px),screen and (max-width:399px){
     body, input, button {
       margin: 0;
-       font-size: 12.5px;
+      font-size: 14px;
     }
 }
 
 @media screen and (max-width:399px){
     body {
       margin: 0;
-      font-size: 11.5px;
+      font-size: 14px;
     }
 }
 @media screen and (max-width:350px){
     body {
       margin: 0;
-        font-size: 10.5px;
+      font-size: 14px;
     }
 }
 

@@ -3,7 +3,7 @@ import { render } from '<src>/helpers/testUtils';
 import Input from './Input';
 import '@testing-library/jest-dom/extend-expect';
 
-describe('Input Component', () => {
+describe('Input Atom', () => {
   it('should render with default css', () => {
     const { getByPlaceholderText } = render(<Input placeholder='John Doe'/>);
 
