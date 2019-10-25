@@ -22,6 +22,13 @@ Share video are serve through [Youtube API](https://developers.google.com/youtub
 * Styled Compoenent
 * Style guidist
 
+## Features
+* All users can play video on the site
+* User can log in
+* Logged in user can like or dislike a video
+* Logged in user can share a video
+
+__Note__ This is a frontend web app and it is not connected to any database. All data are stored in a state.
 
 ## Installation
 * Install Node JS.
@@ -57,11 +64,11 @@ Client side tests - Run  `npm run test` on the terminal while within the project
 
 Client side testing is achieved through the use of `jest`  and `@testing-library/react` packages.
 
-Questions
+## Questions
 For more details contact ilorieazykiel@gmail.com
 
-Support or Contribution
-For any suggestions or contributions or issues please do raise them or email me. For Contributiions, Please clone the repo and implement a PR I would appreciate it
+## Support or Contribution
+For any suggestions or contributions or issues please do raise them or email me. For Contributiions, Please clone the repo and implement a PR I would appreciate it.
 
 
 
