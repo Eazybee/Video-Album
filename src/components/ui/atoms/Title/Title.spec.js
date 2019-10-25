@@ -4,7 +4,7 @@ import Title from './Title';
 import '@testing-library/jest-dom/extend-expect';
 
 
-describe('Title Component', () => {
+describe('Title Atom', () => {
   it('should render with default css', () => {
     const { getByText } = render(<Title>Hello</Title>);
 

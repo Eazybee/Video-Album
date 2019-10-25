@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { render } from '<src>/helpers/testUtils';
-import UserContext, { UserProvider } from './context';
+import UserContext, { UserProvider } from './user';
 
 const Text = () => {
   const A = () => (

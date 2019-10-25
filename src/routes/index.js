@@ -1,7 +1,7 @@
 
 import React, { useContext } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import UserContext from '<context>/context';
+import UserContext from '<context>/user';
 import routeData from './data';
 
 const Routes = () => {

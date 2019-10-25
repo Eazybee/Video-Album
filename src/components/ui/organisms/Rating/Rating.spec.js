@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '<src>/helpers/testUtils';
 import Rating from './Rating';
-import UserContext from '<context>/context';
+import UserContext from '<context>/user';
 
 
 const setup = children => render(

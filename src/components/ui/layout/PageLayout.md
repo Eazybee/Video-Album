@@ -1,8 +1,8 @@
-Header example:
+PageLayout example:
 ```jsx
 import {MemoryRouter} from 'react-router-dom';
 
 <MemoryRouter>
-  <Head />
+  <PageLayout>Default</PageLayout>
 </MemoryRouter>
 ```

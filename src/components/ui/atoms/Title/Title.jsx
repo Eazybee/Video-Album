@@ -5,6 +5,19 @@ import styled from 'styled-components';
 import theme from '<styles>/theme';
 
 
+/**
+ * @description - Title Component
+ *
+ * @prop {string} fontSize - fontSize
+ * @prop {string} textAlign - textAlign
+ * @prop {string} color - color
+ * @prop {string} display - display
+ * @prop {string} children - children
+ * @prop {string} padding - padding
+ * @prop {string} type - type
+ *
+ * @return {component} Title
+ */
 const Title = ({
   fontSize,
   textAlign,

@@ -20,7 +20,7 @@ describe('Video Organism', () => {
     expect(getByRole('summary')).toBeTruthy();
     expect(getAllByRole('icon').length).toBe(2);
     expect(getByText(props.title)).toBeTruthy();
-    expect(getByText(props.description)).toBeTruthy();
+    expect(getByText(`${props.description}...`)).toBeTruthy();
     expect(getByText('Shared by IloriEzekiel@video.com')).toBeTruthy();
   });
 

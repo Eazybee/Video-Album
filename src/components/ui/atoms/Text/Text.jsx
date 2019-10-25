@@ -3,6 +3,21 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<styles>/theme';
 
+
+/**
+ * @description - Text Component
+ *
+ * @prop {string} fontSize - fontSize
+ * @prop {string} textAlign - textAlign
+ * @prop {string} color - color
+ * @prop {string} display - display
+ * @prop {string} fontWeight - fontWeight
+ * @prop {string} children - children
+ * @prop {string} padding - padding
+ * @prop {boolean} hasRightMargin - hasRightMargin
+ *
+ * @return {component} Text
+ */
 const Text = ({
   fontSize,
   textAlign,

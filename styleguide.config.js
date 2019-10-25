@@ -1,6 +1,8 @@
 const path = require('path');
+const commonWebpackConfig = require('./webpack/common');
 
 module.exports = {
+  webpackConfig: Object.assign({}, commonWebpackConfig, {}),
   sections: [
     {
       name: 'Atoms',
@@ -13,6 +15,10 @@ module.exports = {
     {
       name: 'Organisms',
       components: 'src/components/ui/organisms/**/[A-Z]*.jsx',
+    },
+    {
+      name: 'Layout',
+      components: 'src/components/ui/Layout/[A-Z]*.jsx',
     },
   ],
   styleguideComponents: {

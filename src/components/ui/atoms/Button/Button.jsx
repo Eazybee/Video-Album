@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<styles>/theme';
 
-
+/**
+ * @description - Button Component
+ *
+ * @prop {boolean} danger - background color red
+ * @prop {string} display - display
+ * @prop {string} width - width
+ * @prop {string} mediaQuery - mediaQuery
+ * @prop {string} children - children
+ *
+ * @return {component} Button
+ */
 const Button = ({
   danger,
   children,

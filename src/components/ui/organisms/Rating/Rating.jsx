@@ -2,9 +2,18 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import getFlexbox from '<atoms>/Flexbox/Flexbox';
 import RatingMolecule from '<molecules>/Rating/Rating';
-import UserContext from '<context>/context';
+import UserContext from '<context>/user';
 
 const Flexbox = getFlexbox();
+
+/**
+ * @description - Rating Component
+ *
+ * @prop {number} like - like
+ * @prop {number} dislike - dislike
+ *
+ * @return {component} Rating
+ */
 const Rating = ({ like, dislike }) => {
   const [user] = useContext(UserContext);
   const [likeIcon, setLike] = useState({
@@ -52,7 +61,7 @@ const Rating = ({ like, dislike }) => {
   };
 
   return (
-    <Flexbox justifyContent='space-between' width='lg'>
+    <Flexbox justifyContent='space-between' >
       <>
         <RatingMolecule count={likeIcon.count} icon={likeIcon.icon} onClick={onLike}/>
         <RatingMolecule
@@ -60,6 +69,7 @@ const Rating = ({ like, dislike }) => {
           count={dislikeIcon.count}
           icon={dislikeIcon.icon}
           onClick={onDislike}
+          leftPadding='md'
         />
       </>
     </Flexbox>

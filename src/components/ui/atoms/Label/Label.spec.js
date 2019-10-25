@@ -3,7 +3,7 @@ import { render } from '<src>/helpers/testUtils';
 import '@testing-library/jest-dom/extend-expect';
 import Label from './Label';
 
-describe('Label Component', () => {
+describe('Label Atom', () => {
   it('should render successfully', () => {
     const { getByText } = render(
       <Label>Default</Label>,

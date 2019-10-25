@@ -3,7 +3,7 @@ import { render } from '<src>/helpers/testUtils';
 import Icon from './Icon';
 import '@testing-library/jest-dom/extend-expect';
 
-describe('Icon Component', () => {
+describe('Icon Atom', () => {
   it('should render with default css', () => {
     const { getByTestId } = render(<Icon icon='faRegular/ThumbsDown' data-testid='icon'/>);
 

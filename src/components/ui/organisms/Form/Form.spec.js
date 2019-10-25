@@ -29,7 +29,7 @@ const setup = (alterProp = {}) => {
   return render(<Form {...overideProps} />);
 };
 
-describe('Form Component', () => {
+describe('Form Organism', () => {
   it('should render with input element', () => {
     const {
       container, getByPlaceholderText, getByText,

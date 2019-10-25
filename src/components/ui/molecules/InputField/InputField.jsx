@@ -5,15 +5,23 @@ import getFlexbox from '<atoms>/Flexbox/Flexbox';
 import Label from '<atoms>/Label/Label';
 import Text from '<atoms>/Text/Text';
 
-const mediaQuery = `
-  @media screen  and (max-width:480px){
-    padding: .4em 0em ;
-    flex-direction: column;
-    width: calc(100%);
-    align-items: center;
-  }
-`;
+
 const Flexbox = getFlexbox();
+
+/**
+ * @description - InputField Component
+ *
+ * @prop {string} label - label
+ * @prop {string} flexDirection - flexDirection
+ * @prop {string} flexWrap - flexWrap
+ * @prop {object} inputProps - inputProps
+ * @prop {string} error - error
+ * @prop {string} mediaQuery - mediaQuery
+ * @prop {boolean} showError - showError
+ * @prop {string} id - id
+ *
+ * @return {component} InputField
+ */
 const InputField = ({
   label,
   flexDirection,
@@ -26,7 +34,7 @@ const InputField = ({
   <Flexbox
    flexDirection='column'
    flexWrap={flexWrap}
-   mediaQuery={mediaQuery}
+   mediaQuery={InputField.mediaQuery}
    margin={label ? 'inputMargin' : 'zero'}
    width={label ? 'fw' : 'auto'}
   >
@@ -55,6 +63,15 @@ const InputField = ({
     }
   </Flexbox>
 );
+
+InputField.mediaQuery = `
+  @media screen  and (max-width:518px){
+    padding: .4em 0em ;
+    flex-direction: column;
+    width: calc(100%);
+    align-items: center;
+  }
+`;
 
 InputField.defaultProps = {
   flexDirection: 'row',

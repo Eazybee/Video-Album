@@ -1,17 +1,17 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render } from '<src>/helpers/testUtils';
-import Layout from './Layout';
+import PageLayout from './PageLayout';
 
-describe('Layout Component', () => {
+describe('PageLayout Component', () => {
   it('should render with default css', () => {
     const {
       container, getByPlaceholderText, getByRole, getByText,
     } = render(
       <MemoryRouter>
-        <Layout>
+        <PageLayout>
           <div>This is a div</div>
-        </Layout>
+        </PageLayout>
       </MemoryRouter>,
     );
 

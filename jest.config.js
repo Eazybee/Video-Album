@@ -1,9 +1,11 @@
 const config = {
+  roots: ['.', './test'],
   verbose: true,
   moduleNameMapper: {
     '\\.(css)$': '<rootDir>/test/config/assetTransformer.js',
     '^<src>/(.*)$': '<rootDir>/src/$1',
     '^<pages>/(.*)$': '<rootDir>/src/components/pages/$1',
+    '^<api>/(.*)$': '<rootDir>/src/api/$1',
     '^<components>/(.*)$': '<rootDir>/src/components/$1',
     '^<atoms>/(.*)$': '<rootDir>/src/components/ui/atoms/$1',
     '^<molecules>/(.*)$': '<rootDir>/src/components/ui/molecules/$1',

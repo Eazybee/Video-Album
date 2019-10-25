@@ -3,6 +3,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<styles>/theme';
 
+/**
+ * @description - Button Component
+ *
+ * @prop {string} width - widh
+ * @prop {string} type - type
+ * @prop {string} placeholder - placeholder
+ * @prop {string} error - error
+ * @prop {bool} hasVerticalMargin - hasVerticalMargin
+ *
+ * @return {component} Button
+ */
 const Input = ({
   width,
   type,
